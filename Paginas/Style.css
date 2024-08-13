@@ -1,60 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
 
-.container {
-    width: 100vw;
-    height: 100vh;
-    background: #ffffff;
+.form-signin {
+  max-width: 330px;
+  padding: 1rem;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-signin imagem {
+    align-items: center;
+}
+
+#teste {
+    /* border: 1px solid red; */
+}
+
+.imagem {
+    /* border: 1px solid green; */
     display: flex;
-    flex-direction: row;
+    align-items: top;
+    height: 150px;
     justify-content: center;
-    align-items: center;
-    }
-
-    .box {
-    width: 350px;
-    height: 600px;
-    background: #DBD9B5;
-    border-radius: 10px;
-    box-shadow: black;
-    }
     
-    body {
-    margin: 0px;
-    font-family: 'Montserrat', sans-serif;
-    }
-
-h1 {
-   margin-left: 50px;
 }
 
-label {
-    display: flex;
-    font-size: 20px;
-    margin-left: 30px;
-    padding: 10px;
-    font-weight: bold;
-    align-items: center;
-}
-
-input{
-    margin-left: 30px;
-    width: 220px;
-    border-radius: 3px;
-    border-style:inherit;
-    padding: 5px;
-    background-color:ghostwhite;
-    border-color: gray;
-
-}
-
-.button{
-    margin: 30px 100px;
-    padding: 10px;
-    width: 100px;
-    border-radius: 5px;
-    border-style: inherit;
-    background-color: rgb(151, 156, 156);
-    font-weight: bolder;
-    box-shadow: lightslategray;
-
+#logo {
+    /* border: 1px solid orange; */
+    height: 100px;
 }
