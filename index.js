@@ -9,6 +9,6 @@ app.get('/hello', (req, res) => {
     res.send('Hello, World! 123');
 });
 
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}');
+app.listen(port, ()=> {
+    console.log(`Server running at http://localhost:${port}`);
 });
