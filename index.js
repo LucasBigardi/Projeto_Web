@@ -10,17 +10,32 @@ const sequelize = new Sequelize('teste', 'root', 'Ta323287!', {
     dialect: 'mysql'
 })
 
+// Middleware para análise de dados de formulários
+app.use(express.urlencoded({ extended: true }));
+
+// Middleware para análise de dados JSON
+app.use(express.json());
 
 //template Engine
 app.engine('handlebars', engine({defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
 
 
-app.use(express.static('./views/layouts'));
+app.use(express.static('./views'));
+
+//Rotas
 
 app.get('/login', (req, res) => {
     res.render('login');
 });
+
+app.get('/cadastro', function(req, res){
+    res.render('cadastro');
+});
+
+app.post('/entrou', function(req, res){
+    res.send('Dados Recebidos')
+})
 
 app.listen(port, ()=> {
     console.log(`Server running at http://localhost:${port}`);

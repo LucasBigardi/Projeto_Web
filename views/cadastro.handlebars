@@ -1,0 +1,26 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <div class="fadeIn first">
+      <img src="./imagens/ranault.png" id="icon" alt="User Icon" />
+    </div>
+
+    <form>
+      <input type="text" id="email" class="fadeIn second" name="login" placeholder="E-mail">
+      <input onkeyup="validarIgualdade()" type="text" id="email2" class="fadeIn third" name="login" placeholder="Confirme o E-mail">
+      <input onkeyup="validarPadraoSenha(event)" type="text" id="senha" class="fadeIn third" name="login" placeholder="Senha">
+      <input onkeyup="validarPadraoSenha(event)" onkeyup="validarIgualdade()" type="text" id="senha2" class="fadeIn third" name="login" placeholder="Confirme a senha">
+      <input type="submit" class="fadeIn fourth" value="Continuar">
+      <label id="campoObrigatorio" class="labelValidacao">Os campos são obrigatórios.</label>
+      <label id="senhaTamanho" class="labelValidacao">A senha deve ter de 8 a 16 caracteres.</label>
+      <label id="senhaPadrao" class="labelValidacao">A senha deve ter: 1 letra maíscula e 1 caractere especial.</label>
+      <label id="emailIgual" class="labelValidacao">Os E-mais digitados não são iguais, tente novamente.</label>
+      <label id="senhaIgual" class="labelValidacao">As Senhas digitadas não são iguais, tente novamente.</label>
+    </form>
+    
+
+    <div id="formFooter">
+      <label>Já tem conta? <a class="underlineHover" href="./login">Entre aqui.</a></label>
+    </div>
+
+  </div>
+</div>
