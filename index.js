@@ -1,7 +1,20 @@
-var express = require('express');
-var app = express();
-
+const express = require('express');
+const app = express();
 const port = 3000;
+const handlebars = require('express-handlebars')
+
+//Conexão Banco de dados mySQL
+const Sequelize = require('sequelize')
+const sequelize = new Sequelize('teste', 'root', 'Ta323287!', {
+    host: 'localhost',
+    dialect: 'mysql'
+})
+
+
+//template Engine
+// app.engine('handlebars', handlebars({defaultLayout: 'main'}))
+// app.set('view engine', 'handlebars')
+
 
 app.use(express.static('./Paginas'));
 
