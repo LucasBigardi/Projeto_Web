@@ -2,13 +2,15 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const {engine} = require('express-handlebars')
+const bodyParser = require('body-parser')
+const path = require('path')
+const Post = require('./models/Post');
+const { error } = require('console');
 
-//Conexão Banco de dados mySQL
-const Sequelize = require('sequelize')
-const sequelize = new Sequelize('teste', 'root', 'Ta323287!', {
-    host: 'localhost',
-    dialect: 'mysql'
-})
+
+//Body-Parser
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 
 // Middleware para análise de dados de formulários
 app.use(express.urlencoded({ extended: true }));
@@ -21,7 +23,7 @@ app.engine('handlebars', engine({defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
 
 
-app.use(express.static('./views'));
+app.use(express.static(path.join(__dirname,"publica")))
 
 //Rotas
 
@@ -34,7 +36,14 @@ app.get('/cadastro', function(req, res){
 });
 
 app.post('/entrou', function(req, res){
-    res.send('Dados Recebidos')
+    Post.create({
+         email: req.body.email,
+         senha: req.body.senha
+    }).then(function(){
+        res.send("Usuario Criado")
+    }).catch(function(){
+        res.send("Houve um erro."+ erro)
+    })
 })
 
 app.listen(port, ()=> {
