@@ -35,6 +35,10 @@ app.get('/cadastro', function(req, res){
     res.render('cadastro');
 });
 
+app.get('/usuarios', function(req, res){
+    res.render('usuarios');
+});
+
 app.post('/entrou', function(req, res){
     Post.create({
          email: req.body.email,
@@ -42,7 +46,7 @@ app.post('/entrou', function(req, res){
     }).then(function(){
         res.send("Usuario Criado")
     }).catch(function(){
-        res.send("Houve um erro."+ erro)
+        res.send("Houve um erro.")
     })
 })
 
