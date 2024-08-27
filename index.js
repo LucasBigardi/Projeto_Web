@@ -39,6 +39,10 @@ app.get('/usuarios', function(req, res){
     res.render('usuarios');
 });
 
+app.get('/principal', function(req, res){
+    res.render('principal');
+});
+
 app.post('/entrou', function(req, res){
     Post.create({
          email: req.body.email,
